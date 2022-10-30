@@ -27,17 +27,21 @@ public class MainApplication {
         //Welcomes user to the calculator and explains how the calculator works. This will contain the keywords that will be used
         Console.println("Welcome to the Europa calculator!");
         Console.println("You may use the following operations +, -,  *, /");
+        Console.println("Calculator display: %s", firstNumber);
 //        Console.println("Type clear to set the calculator back to zero");
 
         //User is prompted for a number
+
         firstNumber = Console.getDoubleInput("Enter number: ");
 
 
         //while loop to continue
         while (continuePrompt.equals("y")) {
+            Console.println("Calculator display: %s", firstNumber);
             //prompt user for what to do with the number. ie. add, subtract, divide
             mathOperation = Console.getStringInput("Enter a math operation: ");
 
+            Console.println("Calculator display: %s", firstNumber);
             //User is prompted for a second number. "What number do you want to [math function] [first number] by?
             secondNumber = Console.getDoubleInput("Enter number: ");
 
@@ -62,9 +66,11 @@ public class MainApplication {
                 answer = divide(firstNumber, secondNumber);
             }
 
+
+
             firstNumber = answer; //answer is stored into the [first number variable] and can keep being used
 
-            Console.println("Answer and current calculator display: %s", firstNumber);
+            Console.println("Calculator display: %s", firstNumber);
 
             continuePrompt = Console.getStringInput("Would you like to continue (y or n)? ");
 
@@ -95,6 +101,8 @@ public class MainApplication {
     public static double multiply(double num1, double num2) {
         return num1 * num2;
     }
+
+//    public static double square(double num1) { return num1 * num1; }
 
 
 }
